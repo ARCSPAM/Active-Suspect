@@ -10,33 +10,32 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private Transform camera;
+    public float moveSpeed = 5f;
 
-    private float speed = 15f;
-    private Rigidbody rb;
-    private Vector2 moveInput;
-    
-    public InputActionReference playerMove;
+    //move
+    private Vector2 MoveInput;
+    private CharacterController controller;
+
+    Rigidbody rb;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
     void FixedUpdate()
     {
-        //Vector3 move = camera.forward * moveInput.y + camera.right * moveInput.x;
-        //move.y = 0f;
-        //rb.AddForce(move.normalized * speed, ForceMode.VelocityChange);
+        //Move code
+        Vector3 move = new Vector3(MoveInput.x,0,MoveInput.y);
+        controller.Move(move*moveSpeed*Time.deltaTime);
 
-        moveInput = playerMove.action.ReadValue<Vector2>();
-        rb.linearVelocity = new Vector2(moveInput.x * speed, moveInput.y * speed);
     }
 
+    //read WASD inputs from playerInput
     public void OnMove(InputAction.CallbackContext context)
     {
-        if( context.performed)
-        {
-            //move code here
-        }
+        MoveInput = context.ReadValue<Vector2>();
     }
 }

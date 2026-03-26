@@ -4329,7 +4329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: bda2b67ff39976149bd5cee68436e106, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -4344,7 +4344,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3447885910357981300, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      - m_Target: {fileID: 8849241010356406068}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -4356,17 +4356,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 80c79dab-5c48-409c-8ea9-62e065f34d24
-    m_ActionName: 'PlayerActions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b5127aec-bffe-4a32-b8b3-0d311cd9968f
-    m_ActionName: 'PlayerActions/Interact[/Keyboard/e]'
+    m_ActionId: 0e838cce-7822-4c2d-9749-6cf4fae02d83
+    m_ActionName: 'Gamering/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: PlayerActions
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gamering
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!143 &1818420979
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818420965}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.9999999
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1833011818
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,25 +5729,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585549}
     - target: {fileID: 3447885910357981300, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      propertyPath: moveSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447885910357981300, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
       propertyPath: playerMove
       value: 
       objectReference: {fileID: 5673177005471827590, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 4417677307599705372, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7833338342623058256, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8237835826580663337, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7833338342623058256, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
-      insertIndex: -1
+      insertIndex: 1
+      addedObject: {fileID: 1818420979}
+    - targetCorrespondingSourceObject: {fileID: 7833338342623058256, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      insertIndex: 2
       addedObject: {fileID: 1818420973}
     - targetCorrespondingSourceObject: {fileID: 1285999065131904754, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
       insertIndex: -1
       addedObject: {fileID: 330585553}
   m_SourcePrefab: {fileID: 100100000, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+--- !u!114 &8849241010356406068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3447885910357981300, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+  m_PrefabInstance: {fileID: 8849241010356406067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818420965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0d69c75662f094b9d7a11c88bd1d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
