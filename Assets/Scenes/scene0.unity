@@ -3085,6 +3085,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949001018}
   m_CullTransparentMesh: 1
+--- !u!1 &954423467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954423468}
+  m_Layer: 0
+  m_Name: ComputerViewPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &954423468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954423467}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 130, z: -65}
+  m_LocalScale: {x: 50, y: 100, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134337784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4061,6 +4092,7 @@ GameObject:
   - component: {fileID: 1717069921}
   - component: {fileID: 1717069920}
   - component: {fileID: 1717069919}
+  - component: {fileID: 1717069923}
   m_Layer: 0
   m_Name: Computer
   m_TagString: Untagged
@@ -4162,6 +4194,19 @@ Transform:
   - {fileID: 1443576557}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717069923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717069918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27ca926ea6408c46902ef0d1e28b687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactableType: 0
 --- !u!1 &1739993803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,6 +4414,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0316cc16-5c85-4150-86d7-388049fd712d
     m_ActionName: 'Gamering/Camera[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8849241010356406075}
+        m_TargetAssemblyTypeName: PlayerStateManager, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0b489e04-4fe1-4da6-ac9b-8396ed0b13cb
+    m_ActionName: 'Gamering/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8849241010356406075}
+        m_TargetAssemblyTypeName: PlayerStateManager, Assembly-CSharp
+        m_MethodName: OnExitComputer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 204ff5a6-5f13-4007-a6f0-a71d076093bb
+    m_ActionName: 'Computering/Exit[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gamering
@@ -5747,6 +5824,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 376620691045557172, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3447885910357981300, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
       propertyPath: camera
       value: 
@@ -5784,6 +5865,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7833338342623058256, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8849241010356406073}
+    - targetCorrespondingSourceObject: {fileID: 7833338342623058256, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8849241010356406074}
+    - targetCorrespondingSourceObject: {fileID: 7833338342623058256, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8849241010356406075}
   m_SourcePrefab: {fileID: 100100000, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
 --- !u!114 &8849241010356406068 stripped
 MonoBehaviour:
@@ -5796,6 +5883,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0d69c75662f094b9d7a11c88bd1d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+--- !u!20 &8849241010356406069 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2983312469070937410, guid: cfcb21c71d825b1428b02d545076cc30, type: 3}
+  m_PrefabInstance: {fileID: 8849241010356406067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8849241010356406073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5819,3 +5911,4 @@ SceneRoots:
   - {fileID: 1717069922}
   - {fileID: 8849241010356406067}
   - {fileID: 88971719}
+  - {fileID: 954423468}
