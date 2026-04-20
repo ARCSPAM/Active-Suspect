@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
 {
-    private float sens = 100;
+    [SerializeField] private float sens = 20;
     private Vector2 mouseInput;
     private float pitch;
 
