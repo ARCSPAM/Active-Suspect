@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform camera;
 
-    //player move speed (idk why it had to be changed to this high? player was moving incredibly slow for some reason)
-    private float moveSpeed = 300f;
+    //player move speed
+    private float moveSpeed = 5f;
 
     //movement
     private Vector2 MoveInput;
