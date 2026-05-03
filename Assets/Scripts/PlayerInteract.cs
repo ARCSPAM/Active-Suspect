@@ -34,35 +34,32 @@ public class PlayerInteract : MonoBehaviour
         {
             //if the interact hits something, attempt to get its type
             InteractableType interaction = hit.collider.GetComponent<InteractableType>();
-            if (interaction != null)
+            //test possible interaction objects
+            switch(interaction)
             {
-                //test possible interaction objects
-                switch(interaction)
-                {
-                    //upon interact with computer
-                    case InteractableType.Computer:
-                        //swap action map to computer mode
-                        gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Computering");
+                //upon interact with computer
+                case InteractableType.Computer:
+                    //swap action map to computer mode
+                    gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Computering");
 
-                        //store player position (temp) so camera returns to correct point
-                        playerStoredPosition = Camera.main.transform.position;
-                        playerStoredRotation = Camera.main.transform.rotation;
+                    //store player position (temp) so camera returns to correct point
+                    playerStoredPosition = Camera.main.transform.position;
+                    playerStoredRotation = Camera.main.transform.rotation;
 
-                        //move camera to computer position and enable cursor
-                        Camera.main.transform.position = computerViewPosition.position;
-                        Camera.main.transform.rotation = computerViewPosition.rotation;
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
+                    //move camera to computer position and enable cursor
+                    Camera.main.transform.position = computerViewPosition.position;
+                    Camera.main.transform.rotation = computerViewPosition.rotation;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
 
-                        //disable mesh so can't see the player (temp)
-                        gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    //disable mesh so can't see the player (temp)
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
 
-                        gameObject.GetComponent<PlayerStateManager>().ChangeToState(PlayerState.Gaming);
-                        break;
-                    //if no option is found, exit
-                    default:
-                        break;
-                }
+                    gameObject.GetComponent<PlayerStateManager>().ChangeToState(PlayerState.Gaming);
+                    break;
+                //if no option is found, exit
+                default:
+                    break;
             }
         }
     }
