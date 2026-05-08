@@ -4203,10 +4203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717069918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27ca926ea6408c46902ef0d1e28b687, type: 3}
+  m_Script: {fileID: 11500000, guid: 17cd2000aa662ce40a94e20aebec087d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactableType: 0
+  m_EditorClassIdentifier: Assembly-CSharp::ComputerInteract
+  computerViewPosition: {fileID: 954423468}
 --- !u!1 &1739993803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,7 +5927,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
   playerCamera: {fileID: 8849241010356406069}
-  computerViewPosition: {fileID: 954423468}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
