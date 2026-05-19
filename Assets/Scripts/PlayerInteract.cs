@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
@@ -6,12 +7,42 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField]
     Camera playerCamera;
+    [SerializeField]
+    private TextMeshProUGUI interactText;
 
     //set maximum distance to interact with objects
     private float interactDistance = 3f;
 
     //keeps track of the current object interacted with
     public IInteractable currentInteraction;
+
+    /// <summary>
+    /// Update
+    /// </summary>
+    void Update()
+    {
+        InteractableCheck();
+    }
+
+    void InteractableCheck()
+    {
+        //cast short ray after hitting interact
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+        RaycastHit hit;
+
+        //reacts to close object
+        if (Physics.Raycast(ray, out hit, interactDistance))
+        {
+            IInteractable interaction = hit.collider.GetComponent<IInteractable>();
+            if(interaction != null)
+            {
+                interactText.text = interaction.GetInteractText();
+                interactText.gameObject.SetActive(true);
+                return;
+            }
+        }
+        interactText.gameObject.SetActive(false);
+    }
 
     /// <summary>
     /// Interacting with objects
@@ -31,8 +62,11 @@ public class PlayerInteract : MonoBehaviour
             //if the interact hits something, interact with it
             IInteractable interaction = hit.collider.GetComponent<IInteractable>();
             //pass the player into the interaction for necessary data
-            interaction.Interact(gameObject);
-            currentInteraction = interaction;
+            if (interaction != null)
+            {
+                interaction.Interact(gameObject);
+                currentInteraction = interaction;
+            }
         }
     }
     /// <summary>

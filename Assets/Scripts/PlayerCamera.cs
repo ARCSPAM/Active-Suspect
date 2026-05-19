@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
@@ -18,6 +19,10 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         //moves the camera with the mouse
         transform.Rotate(Vector3.up, mouseInput.x * sens * Time.deltaTime);
         pitch -= mouseInput.y * sens * Time.deltaTime;

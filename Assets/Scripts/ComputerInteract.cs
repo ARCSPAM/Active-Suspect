@@ -10,6 +10,8 @@ public class ComputerInteract : MonoBehaviour, IInteractable
     //position for the camera to go to when in the computer
     public Transform computerViewPosition;
 
+    private string interactString = "Computer";
+
     /// <summary>
     /// Player interacts with computer
     /// </summary>
@@ -56,5 +58,14 @@ public class ComputerInteract : MonoBehaviour, IInteractable
         player.GetComponent<MeshRenderer>().enabled = true;
 
         player.GetComponent<PlayerStateManager>().ChangeToState(PlayerState.Gaming);
+    }
+
+    /// <summary>
+    /// Returns interactable type
+    /// </summary>
+    /// <returns></returns>
+    public string GetInteractText()
+    {
+        return interactString;
     }
 }

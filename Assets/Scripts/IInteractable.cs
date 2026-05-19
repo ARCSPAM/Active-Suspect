@@ -7,5 +7,6 @@ public interface IInteractable
 {
     void Interact(GameObject player);
     void Exit(GameObject player);
+    string GetInteractText();
 
 }
