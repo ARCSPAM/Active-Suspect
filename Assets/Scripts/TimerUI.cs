@@ -32,7 +32,6 @@ public class TimerUI : MonoBehaviour
             currentTime = 0;
             updateTimer();
             enabled = false;
-            SceneManager.LoadScene(5);
         }
     }
 
